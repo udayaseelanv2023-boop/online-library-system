@@ -1,1 +1,1 @@
-Testing Jenkins Poll SCM - commit 1
+Testing Jenkins Poll SCM - demo
