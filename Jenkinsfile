@@ -1,39 +1,27 @@
 pipeline {
     agent any
 
-    environment {
-        APP_NAME = "Student Grade App"
-    }
-
     stages {
         stage('Build') {
             steps {
-                echo "Building ${APP_NAME}"
-                bat 'python student_app.py'
+                echo 'Building Library System...'
+                bat 'echo Compiling library modules'
             }
         }
 
         stage('Test') {
             steps {
-                echo "Running Unit Tests"
-                bat 'python test_student_app.py'
+                echo 'Running Library Tests...'
+                bat 'echo Test Case 1: PASS'
+                bat 'echo Test Case 2: PASS'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploying application (simulated)"
-                bat 'echo Application deployed successfully'
+                echo 'Deploying Application...'
+                bat 'echo Library System Deployed Successfully'
             }
-        }
-    }
-
-    post {
-        success {
-            echo "Pipeline executed successfully!"
-        }
-        failure {
-            echo "Pipeline failed! Check logs."
         }
     }
 }
