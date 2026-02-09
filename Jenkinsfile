@@ -2,25 +2,28 @@ pipeline {
     agent any
 
     stages {
+
         stage('Build') {
             steps {
-                echo 'Building Library System...'
-                bat 'echo Compiling library modules'
+                echo 'Building Library Management System'
+                bat 'echo Checking source files'
+                bat 'echo Build completed successfully'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running Library Tests...'
-                bat 'echo Test Case 1: PASS'
-                bat 'echo Test Case 2: PASS'
+                echo 'Executing Test Cases'
+                bat 'echo Login Test : PASS'
+                bat 'echo Book Issue Test : PASS'
+                bat 'echo Return Book Test : PASS'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying Application...'
-                bat 'echo Library System Deployed Successfully'
+                echo 'Deploying Application'
+                bat 'echo Application deployed on local server'
             }
         }
     }
