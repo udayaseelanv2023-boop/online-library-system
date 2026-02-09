@@ -1,21 +1,39 @@
-// Demo commit for Jenkins build
 pipeline {
     agent any
+
+    environment {
+        APP_NAME = "Student Grade App"
+    }
+
     stages {
         stage('Build') {
             steps {
-                echo 'Build Online Library Application'
+                echo "Building ${APP_NAME}"
+                bat 'python student_app.py'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Test Online Library Application'
+                echo "Running Unit Tests"
+                bat 'python test_student_app.py'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploy Online Library Application'
+                echo "Deploying application (simulated)"
+                bat 'echo Application deployed successfully'
             }
+        }
+    }
+
+    post {
+        success {
+            echo "Pipeline executed successfully!"
+        }
+        failure {
+            echo "Pipeline failed! Check logs."
         }
     }
 }
