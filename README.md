@@ -1,1 +1,1 @@
-Testing Jenkins Poll SCM - demo
+Auto build test
